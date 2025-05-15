@@ -6,6 +6,9 @@ const gameState = {
     multiplier: 1,
     multiplierCost: 10,
     passiveIncomeRate: 0,
+    passiveLevel: 0,
+    passiveUpgradeCost: 50,
+    gems: 0, // New resource
 };
 
 // UI Module
@@ -15,6 +18,11 @@ const ui = {
     multiplierUpgradeButton: document.getElementById('multiplierUpgrade'),
     multiplierDisplay: document.getElementById('multiplier'),
     incomeRateDisplay: document.getElementById('incomeRate'),
+    passiveUpgradeButton: document.getElementById('passiveUpgrade'),
+    passiveLevelDisplay: document.getElementById('passiveLevel'),
+    gemsDisplay: document.getElementById('gems'), // New gem display
+    findGemsButton: document.getElementById('findGemsButton'), // New find gems button
+
 
     updateDisplay: function() {
         if (this.scoreDisplay) {
@@ -37,6 +45,22 @@ const ui = {
             this.incomeRateDisplay.textContent = gameState.passiveIncomeRate.toFixed(1);
         } else {
             console.error("Income rate display element not found!");
+        }
+
+        if (this.passiveLevelDisplay) {
+            this.passiveLevelDisplay.textContent = gameState.passiveLevel;
+        } else {
+            console.error("Passive level display element not found!");
+        }
+
+         if (this.passiveUpgradeButton) {
+             this.passiveUpgradeButton.textContent = `Buy Passive Income Upgrade (Cost: ${gameState.passiveUpgradeCost})`;
+        }
+
+        if (this.gemsDisplay) { // Update gems display
+            this.gemsDisplay.textContent = gameState.gems;
+        } else {
+            console.error("Gems display element not found!");
         }
     }
 };
@@ -68,6 +92,19 @@ const gameLogic = {
             console.error("Multiplier upgrade button not found!");
         }
 
+         if (ui.passiveUpgradeButton) {
+            ui.passiveUpgradeButton.addEventListener('click', () => this.buyPassiveUpgrade());
+        } else {
+            console.error("Passive upgrade button not found!");
+        }
+
+        if (ui.findGemsButton) { // Add event listener for find gems button
+            ui.findGemsButton.addEventListener('click', () => this.handleFindGems());
+        } else {
+            console.error("Find gems button not found!");
+        }
+
+
         // Save game state before the window is closed or reloaded
         window.addEventListener('beforeunload', () => this.saveGame());
         window.addEventListener('pagehide', () => this.saveGame());
@@ -91,6 +128,28 @@ const gameLogic = {
         }
     },
 
+     buyPassiveUpgrade: function() {
+        if (gameState.score >= gameState.passiveUpgradeCost) {
+            gameState.score -= gameState.passiveUpgradeCost;
+            gameState.passiveLevel++;
+            gameState.passiveUpgradeCost = Math.floor(gameState.passiveUpgradeCost * 2); // Increase cost
+            this.updatePassiveIncomeRate();
+            ui.updateDisplay();
+            this.saveGame(); // Save after purchase
+        } else {
+            alert("Not enough score to buy this upgrade!");
+        }
+    },
+
+    handleFindGems: function() { // New function to find gems
+        const foundGems = Math.floor(Math.random() * 5) + 1; // Find 1-5 gems
+        gameState.gems += foundGems;
+        ui.updateDisplay();
+        this.saveGame(); // Save after finding gems
+        alert(`You found ${foundGems} gems!`);
+    },
+
+
     startPassiveIncome: function() {
         this.updatePassiveIncomeRate(); // Set initial rate
 
@@ -105,8 +164,8 @@ const gameLogic = {
     },
 
     updatePassiveIncomeRate: function() {
-         // Example: Increase passive income rate with multiplier
-        gameState.passiveIncomeRate = gameState.multiplier * 0.1; // Adjust rate as needed
+         // Passive income is now based on multiplier AND passive level
+        gameState.passiveIncomeRate = (gameState.multiplier * 0.1) + (gameState.passiveLevel * 0.5); // Adjust rate as needed
         ui.updateDisplay(); // Update display after rate change
     },
 
@@ -126,6 +185,7 @@ const gameLogic = {
             if (savedState) {
                 const loadedState = JSON.parse(savedState);
                 // Merge loaded state into current gameState, ensuring all properties are covered
+                // Use Object.assign for simple merging, but be cautious with nested objects if they were added
                 Object.assign(gameState, loadedState);
                 console.log("Game loaded successfully!");
             }

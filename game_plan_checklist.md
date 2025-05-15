@@ -19,8 +19,8 @@
   * [x] Link the [`style.css`](style.css) file in the `<head>`.
   * [x] Link the [`script.js`](script.js) file at the end of the `<body>`.
   * [x] Add elements for:
-  * [x] Displaying the current score (e.g., a `<p>` or `<div>` with an ID).
-  * [x] A button that the user will click to increase the score (e.g., a `<button>` with an ID).
+    * [x] Displaying the current score (e.g., a `<p>` or `<div>` with an ID).
+    * [x] A button that the user will click to increase the score (e.g., a `<button>` with an ID).
 
 * [x] 3.  **Basic CSS Styling (`style.css`):**
   * [x] Add some basic styles to make the game elements visible and centered (optional but improves presentation).
@@ -48,8 +48,8 @@
   * [x] Within the modular JavaScript structure, add a variable for a click multiplier (initialized to 1).
   * [x] Modify the score increment logic to add `1 * multiplier`.
   * [x] Add logic for the upgrade button, potentially in a dedicated function:
-  * [x] Check if the player has enough score to buy the upgrade.
-  * [x] If yes, decrease the score by the upgrade cost, increase the multiplier, and update the display.
+    * [x] Check if the player has enough score to buy the upgrade.
+    * [x] If yes, decrease the score by the upgrade cost, increase the multiplier, and update the display.
   * [x] Add Passive Income:
   * [x] Within the modular JavaScript structure, use `setInterval` to periodically increase the score based on a passive income rate.
   * [x] Display the passive income rate in [`index.html`](index.html).
@@ -70,15 +70,15 @@
   * [x] Add functionality to save the current game state (score, multiplier, etc.) to the browser's `localStorage` or similar storage.
   * [x] Implement logic to load the saved game state when the page is loaded. (Based on `Idle RPG Plan.md` Step 3.2)
 
-* [ ] 3.  **Expand Core Mechanics - Upgrades:**
-  * [ ] Design and add new types of upgrades (e.g., upgrades that increase passive income rate, reduce upgrade costs, unlock new features).
-  * [ ] Update the UI (`index.html`) to include buttons and displays for new upgrades.
-  * [ ] Implement the logic for purchasing and applying these new upgrades in `script.js`, maintaining modularity. (Based on `game_plan.md` Step 7 and `Idle RPG Plan.md` Step 4)
+* [x] 3.  **Expand Core Mechanics - Upgrades:**
+  * [x] Design and add new types of upgrades (e.g., upgrades that increase passive income rate, reduce upgrade costs, unlock new features).
+  * [x] Update the UI (`index.html`) to include buttons and displays for new upgrades.
+  * [x] Implement the logic for purchasing and applying these new upgrades in `script.js`, maintaining modularity. (Based on `game_plan.md` Step 7 and `Idle RPG Plan.md` Step 4)
 
-* [ ] 4.  **Introduce New Resources/Currencies:**
-  * [ ] Define additional resources or currencies beyond the main "score" (e.g., gems, materials, energy).
-  * [ ] Update the game state and display to track these new resources.
-  * [ ] Integrate new resources into existing or new mechanics (e.g., some upgrades might cost a different resource).
+* [x] 4.  **Introduce New Resources/Currencies:**
+  * [x] Define additional resources or currencies beyond the main "score" (e.g., gems, materials, energy).
+  * [x] Update the game state and display to track these new resources.
+  * [x] Integrate new resources into existing or new mechanics (e.g., some upgrades might cost a different resource).
 
 * [ ] 5.  **Develop Basic Inventory System:**
   * [ ] Create a system to manage items the player collects.
