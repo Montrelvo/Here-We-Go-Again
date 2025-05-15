@@ -1,4 +1,4 @@
-## **Summary**
+# **Summary**
 
 Building a browser-based idle RPG using "vibe coding" involves clearly defining tasks, selecting a well-supported tech stack, and adopting an iterative development approach that emphasizes refactoring and modularity. By breaking features into small, testable steps and leveraging AI-assisted coding tools, you can rapidly prototype core mechanics—such as the idle game loop and state persistence—before gradually layering on additional systems like upgrades, achievements, and UI components. Throughout development, maintain a clean architecture with small modules and clear APIs, employ version control and automated testing to safeguard against regressions, and continuously refactor to keep the codebase extensible for future features.
 
@@ -163,4 +163,3 @@ Building a browser-based idle RPG using "vibe coding" involves clearly defining 
 ---
 
 By following this structured, vibe-coding-infused roadmap—anchored by clear prompts, modular design, continuous refactoring, and AI-assisted development—you’ll build a maintainable, extensible browser-based idle RPG that can evolve gracefully as new ideas and community contributions emerge.
-
