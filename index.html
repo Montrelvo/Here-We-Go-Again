@@ -11,34 +11,44 @@
     <p>Score: <span id="score">0</span></p>
     <button id="clickButton">Click Me!</button>
 
-    <div id="resources">
-        <h2>Resources</h2>
-        <p>Gems: <span id="gems">0</span></p>
-        <button id="findGemsButton">Find Gems</button>
+    <div class="dropdown-container">
+        <h2 class="dropdown-header">Resources</h2>
+        <div class="dropdown-content">
+            <p>Gems: <span id="gems">0</span></p>
+            <button id="findGemsButton">Find Gems</button>
+        </div>
     </div>
 
-    <div id="upgrades">
-        <h2>Upgrades</h2>
-        <button id="multiplierUpgrade">Buy Multiplier (Cost: 10)</button>
-        <p>Multiplier: <span id="multiplier">1</span></p>
+    <div class="dropdown-container">
+        <h2 class="dropdown-header">Upgrades</h2>
+        <div class="dropdown-content">
+            <button id="multiplierUpgrade">Buy Multiplier (Cost: 10)</button>
+            <p>Multiplier: <span id="multiplier">1</span></p>
+        </div>
     </div>
 
-    <div id="passiveIncome">
-        <h2>Passive Income</h2>
-        <p>Income per second: <span id="incomeRate">0</span></p>
+    <div class="dropdown-container">
+        <h2 class="dropdown-header">Passive Income</h2>
+        <div class="dropdown-content">
+            <p>Income per second: <span id="incomeRate">0</span></p>
+        </div>
     </div>
 
-    <div id="passiveUpgrades">
-        <h2>Passive Upgrades</h2>
-        <button id="passiveUpgrade">Buy Passive Income Upgrade (Cost: 50)</button>
-        <p>Passive Level: <span id="passiveLevel">0</span></p>
+    <div class="dropdown-container">
+        <h2 class="dropdown-header">Passive Upgrades</h2>
+        <div class="dropdown-content">
+            <button id="passiveUpgrade">Buy Passive Income Upgrade (Cost: 50)</button>
+            <p>Passive Level: <span id="passiveLevel">0</span></p>
+        </div>
     </div>
 
-    <div id="inventory">
-        <h2>Inventory</h2>
-        <ul id="inventoryList">
-            <!-- Inventory items will be added here by JavaScript -->
-        </ul>
+    <div class="dropdown-container">
+        <h2 class="dropdown-header">Inventory</h2>
+        <div class="dropdown-content">
+            <ul id="inventoryList">
+                <!-- Inventory items will be added here by JavaScript -->
+            </ul>
+        </div>
     </div>
 
     <script src="script.js"></script>

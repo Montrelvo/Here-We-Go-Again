@@ -228,4 +228,15 @@ const gameLogic = {
 };
 
 // Initialize the game when the DOM is fully loaded
+// Dropdown functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const dropdownHeaders = document.querySelectorAll('.dropdown-header');
+
+    dropdownHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const dropdownContainer = header.parentElement;
+            dropdownContainer.classList.toggle('active');
+        });
+    });
+});
 document.addEventListener('DOMContentLoaded', () => gameLogic.init());
