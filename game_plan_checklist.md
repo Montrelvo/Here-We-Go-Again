@@ -80,10 +80,10 @@
   * [x] Update the game state and display to track these new resources.
   * [x] Integrate new resources into existing or new mechanics (e.g., some upgrades might cost a different resource).
 
-* [ ] 5.  **Develop Basic Inventory System:**
-  * [ ] Create a system to manage items the player collects.
-  * [ ] Add a simple UI section to display the inventory.
-  * [ ] Implement logic for adding, removing, and potentially using items.
+* [x] 5.  **Develop Basic Inventory System:**
+  * [x] Create a system to manage items the player collects.
+  * [x] Add a simple UI section to display the inventory.
+  * [x] Implement logic for adding, removing, and potentially using items.
 
 * [ ] 6.  **Implement Event Scheduling System:**
   * [ ] Develop a more robust system for handling timed events or actions, which can be expanded for future features like timed buffs, missions, or production cycles. (Based on `Idle RPG Plan.md` Step 3.3)

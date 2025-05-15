@@ -9,6 +9,7 @@ const gameState = {
     passiveLevel: 0,
     passiveUpgradeCost: 50,
     gems: 0, // New resource
+    inventory: [], // New inventory array
 };
 
 // UI Module
@@ -22,6 +23,7 @@ const ui = {
     passiveLevelDisplay: document.getElementById('passiveLevel'),
     gemsDisplay: document.getElementById('gems'), // New gem display
     findGemsButton: document.getElementById('findGemsButton'), // New find gems button
+    inventoryList: document.getElementById('inventoryList'), // New inventory list element
 
 
     updateDisplay: function() {
@@ -61,6 +63,18 @@ const ui = {
             this.gemsDisplay.textContent = gameState.gems;
         } else {
             console.error("Gems display element not found!");
+        }
+
+        // Update inventory display
+        if (this.inventoryList) {
+            this.inventoryList.innerHTML = ''; // Clear current list
+            gameState.inventory.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = item;
+                this.inventoryList.appendChild(listItem);
+            });
+        } else {
+            console.error("Inventory list element not found!");
         }
     }
 };
@@ -149,6 +163,12 @@ const gameLogic = {
         alert(`You found ${foundGems} gems!`);
     },
 
+    addItemToInventory: function(item) { // New function to add item to inventory
+        gameState.inventory.push(item);
+        ui.updateDisplay();
+        this.saveGame(); // Save after adding item
+    },
+
 
     startPassiveIncome: function() {
         this.updatePassiveIncomeRate(); // Set initial rate
@@ -187,6 +207,10 @@ const gameLogic = {
                 // Merge loaded state into current gameState, ensuring all properties are covered
                 // Use Object.assign for simple merging, but be cautious with nested objects if they were added
                 Object.assign(gameState, loadedState);
+                // Ensure inventory is an array after loading, in case it was null/undefined in older saves
+                if (!Array.isArray(gameState.inventory)) {
+                    gameState.inventory = [];
+                }
                 console.log("Game loaded successfully!");
             }
         } catch (e) {
