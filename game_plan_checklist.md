@@ -85,16 +85,16 @@
   * [x] Add a simple UI section to display the inventory.
   * [x] Implement logic for adding, removing, and potentially using items.
 
-* [ ] 6.  **Implement Event Scheduling System:**
-  * [ ] Develop a more robust system for handling timed events or actions, which can be expanded for future features like timed buffs, missions, or production cycles. (Based on `Idle RPG Plan.md` Step 3.3)
+* [x] 6.  **Implement Event Scheduling System:**
+  * [x] Develop a more robust system for handling timed events or actions, which can be expanded for future features like timed buffs, missions, or production cycles. (Based on `Idle RPG Plan.md` Step 3.3)
 
-* [ ] 7.  **Add Achievements System:**
-  * [ ] Define a set of achievements based on player progress (e.g., reaching a certain score, buying a specific number of upgrades).
-  * [ ] Implement logic to track player actions and unlock achievements.
-  * [ ] Add a UI section to display unlocked achievements.
+* [x] 7.  **Add Achievements System:**
+  * [x] Define a set of achievements based on player progress (e.g., reaching a certain score, buying a specific number of upgrades).
+  * [x] Implement logic to track player actions and unlock achievements.
+  * [x] Add a UI section to display unlocked achievements.
 
-* [ ] 8.  **Basic Combat/Exploration Mechanic (Simplified Idle):**
-  * [ ] Introduce a simplified system where the player can send units on missions or engage in combat that resolves over time (idle combat).
+* [x] 8.  **Basic Combat/Exploration Mechanic (Simplified Idle):**
+  * [x] Introduce a simplified system where the player can send units on missions or engage in combat that resolves over time (idle combat).
   * [ ] Define unit types, stats, and mission parameters.
   * [ ] Implement the background simulation and display results to the player.
   * [ ] Refine UI and User Experience:
