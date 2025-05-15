@@ -1,5 +1,7 @@
 // script.js
 
+import { eventScheduler } from './systems/eventScheduler.js';
+
 // Game State Module
 const gameState = {
     score: 0,
@@ -179,8 +181,10 @@ const gameLogic = {
 
         this.passiveIncomeInterval = setInterval(() => {
             gameState.score += gameState.passiveIncomeRate;
+            // Update the event scheduler with a delta of 1 (representing 1 second)
+            eventScheduler.update(1);
             ui.updateDisplay();
-        }, 1000); // Add income every 1 second
+        }, 1000); // Add income every 1 second and update scheduler
     },
 
     updatePassiveIncomeRate: function() {
